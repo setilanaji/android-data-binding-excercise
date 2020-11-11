@@ -1,4 +1,4 @@
-package com.example.androiddatabinding.activity
+package com.example.androiddatabinding.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

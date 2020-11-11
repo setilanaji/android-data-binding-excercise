@@ -1,4 +1,4 @@
-package com.example.androiddatabinding.adapter
+package com.example.androiddatabinding.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,10 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androiddatabinding.PostResponse
 import com.example.androiddatabinding.R
 import com.example.androiddatabinding.model.PostModel
-import com.example.androiddatabinding.model.UserModel
 
 class PostAdapter (private val context: Context, private val items: List<PostModel>): RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {

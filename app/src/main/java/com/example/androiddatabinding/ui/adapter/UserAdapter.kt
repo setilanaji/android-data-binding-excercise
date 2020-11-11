@@ -1,13 +1,16 @@
-package com.example.androiddatabinding.adapter
+package com.example.androiddatabinding.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androiddatabinding.R
 import com.example.androiddatabinding.model.UserModel
+import com.example.androiddatabinding.utils.ImageRoundedCorner
+import com.squareup.picasso.Picasso
 
 class UserAdapter ( private val context: Context, val items: MutableList<UserModel>): RecyclerView.Adapter<UserAdapter.UserViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -22,6 +25,7 @@ class UserAdapter ( private val context: Context, val items: MutableList<UserMod
         val user = items[position]
         holder.name?.text = user.firstName + " " + user.lastName
         holder.email?.text = user.email
+        Picasso.get().load(user.avatarImgUrl).transform(ImageRoundedCorner()).into(holder.image)
     }
 
     override fun getItemCount(): Int {
@@ -31,10 +35,13 @@ class UserAdapter ( private val context: Context, val items: MutableList<UserMod
     class UserViewHolder(var view: View): RecyclerView.ViewHolder(view){
         var name: TextView? = null
         var email: TextView? = null
+        var image: ImageView? = null
 
         init {
             name = view.findViewById(R.id.tv_item_user_name)
             email = view.findViewById(R.id.tv_item_user_email)
+            image = view.findViewById(R.id.image_item_user_profile)
+
         }
 
     }

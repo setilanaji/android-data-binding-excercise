@@ -1,10 +1,10 @@
-package com.example.androiddatabinding
+package com.example.androiddatabinding.utils
 
 //import androidx.viewbinding.BuildConfig
 //import com.example.androiddatabinding.model.UserModel
+import com.example.androiddatabinding.PostService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 //import okhttp3.logging.HttpLoggingInterceptor

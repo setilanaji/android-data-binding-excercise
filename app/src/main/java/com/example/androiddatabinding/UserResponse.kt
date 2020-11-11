@@ -13,7 +13,7 @@ data class UserResponse (
     val total: Int,
     @SerializedName("total_pages")
     val totalPages: Int,
-    @Nullable
+    @SerializedName("data")
     val result: List<UserModel>
 
 )

@@ -1,0 +1,42 @@
+package com.example.androiddatabinding.adapter
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.androiddatabinding.PostResponse
+import com.example.androiddatabinding.R
+import com.example.androiddatabinding.model.PostModel
+import com.example.androiddatabinding.model.UserModel
+
+class PostAdapter (private val context: Context, private val items: List<PostModel>): RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
+
+        val inflater = LayoutInflater.from(context)
+        val view: View = inflater.inflate(R.layout.post_item, parent, false)
+        return PostViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+        val post = items[position]
+        holder.title?.text = post.title
+        holder.body?.text = post.body    }
+
+    override fun getItemCount(): Int {
+        return items.size
+    }
+
+    class PostViewHolder(var view: View): RecyclerView.ViewHolder(view){
+        var title: TextView? = null
+        var body: TextView? = null
+
+        init {
+            title = view.findViewById(R.id.tv_item_post_title)
+            body = view.findViewById(R.id.tv_item_post_body)
+        }
+
+    }
+
+}

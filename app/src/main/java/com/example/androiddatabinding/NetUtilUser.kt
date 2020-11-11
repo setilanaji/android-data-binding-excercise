@@ -11,7 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object NetUtil {
+object NetUtilUser {
 
     private const val BASE_URL = "https://reqres.in/"
 
@@ -38,4 +38,5 @@ object NetUtil {
     val apiService: UserService by lazy {
         retrofit.create(UserService::class.java)
     }
+
 }

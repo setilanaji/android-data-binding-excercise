@@ -59,7 +59,7 @@ class ThirdActivity : AppCompatActivity() {
                     val intent = Intent(this@ThirdActivity, PostActivity::class.java)
                     intent.putExtra("id", postModel.id)
                     intent.putExtra("title", postModel.title)
-                    intent.putExtra("title", postModel.body)
+                    intent.putExtra("body", postModel.body)
                     startActivity(intent)
                 }
 

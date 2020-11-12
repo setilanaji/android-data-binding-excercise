@@ -12,7 +12,7 @@ import com.example.androiddatabinding.model.UserModel
 import com.example.androiddatabinding.utils.ImageRoundedCorner
 import com.squareup.picasso.Picasso
 
-class UserAdapter ( private val context: Context, val items: MutableList<UserModel>, val  itemListener: UserAdapter.PostItemListener): RecyclerView.Adapter<UserAdapter.UserViewHolder>(){
+class UserAdapter (private val context: Context, val items: MutableList<UserModel>, private val  itemListener: UserAdapter.PostItemListener): RecyclerView.Adapter<UserAdapter.UserViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
 
         val inflater = LayoutInflater.from(context)

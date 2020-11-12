@@ -20,19 +20,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
 
-        val checkbox = CheckBox(this)
-        checkbox.text = "yes"
-        val dialog = AlertDialog.Builder(this)
-        dialog.setTitle("Terms and Conditions")
-        dialog.setIcon(R.drawable.ic_baseline_sentiment_satisfied_alt_24)
-        dialog.setMessage("\n" +
-                "\n" +
-                "A Terms and Conditions agreement is not legally required. However, having one comes with a number of important benefits for both you and your users/customers.\n" +
-                "\n" +
-                "The benefits include increasing your control over your business/platform, while helping your users understand your rules, requirements and restrictions.\n")
-        dialog.setView(checkbox)
-        dialog.create()
-        dialog.show()
+
 
 
         binding.run {

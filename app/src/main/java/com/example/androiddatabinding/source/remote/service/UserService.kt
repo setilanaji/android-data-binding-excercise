@@ -10,6 +10,6 @@ interface UserService {
     @GET("api/users")
     fun getAllUser(
         @Query("page")
-        page: String
+        page: Int
     ): Call<UserResponse>
 }

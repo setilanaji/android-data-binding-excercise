@@ -24,7 +24,7 @@ class UserViewModel : BaseViewModel() {
 
 
     fun setAllUser(){
-        NetUtilUser.apiService.getAllUser("1").enqueue(object :
+        NetUtilUser.apiService.getAllUser(1).enqueue(object :
                 retrofit2.Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 val userResponse = response.body()

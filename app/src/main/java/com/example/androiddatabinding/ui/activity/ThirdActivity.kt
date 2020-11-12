@@ -1,5 +1,6 @@
 package com.example.androiddatabinding.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -52,11 +53,20 @@ class ThirdActivity : AppCompatActivity() {
         postViewModel.setAllPost()
 
         postViewModel.data.observe({ lifecycle }, {
-            val userAdapter = PostAdapter(this, it as MutableList<PostModel>)
+            val postAdapter = PostAdapter(this, it as MutableList<PostModel>, object :   PostAdapter.PostItemListener {
+                override fun onPostClick(postModel: PostModel) {
+                    val intent = Intent(this@ThirdActivity, PostActivity::class.java)
+                    intent.putExtra("id", postModel.id)
+                    intent.putExtra("title", postModel.title)
+                    intent.putExtra("title", postModel.body)
+                    startActivity(intent)
+                }
+
+            })
             val recyclerView = binding.recyclerThirdPost
 
             recyclerView.apply {
-                this.adapter = userAdapter
+                this.adapter = postAdapter
                 this.layoutManager =
                         StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
             }

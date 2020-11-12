@@ -3,7 +3,7 @@ package com.example.androiddatabinding.viewmodel
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.androiddatabinding.UserResponse
+import com.example.androiddatabinding.source.remote.response.UserResponse
 import com.example.androiddatabinding.model.UserModel
 import com.example.androiddatabinding.utils.NetUtilUser
 import retrofit2.Call

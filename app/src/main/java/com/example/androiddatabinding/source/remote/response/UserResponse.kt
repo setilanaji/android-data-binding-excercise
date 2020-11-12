@@ -1,4 +1,4 @@
-package com.example.androiddatabinding
+package com.example.androiddatabinding.source.remote.response
 
 import androidx.annotation.Nullable
 import com.example.androiddatabinding.model.UserModel

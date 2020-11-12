@@ -1,4 +1,4 @@
-package com.example.androiddatabinding
+package com.example.androiddatabinding.source.remote.response
 
 import com.example.androiddatabinding.model.PostModel
 import com.example.androiddatabinding.model.UserModel

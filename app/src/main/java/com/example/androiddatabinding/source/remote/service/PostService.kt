@@ -1,4 +1,4 @@
-package com.example.androiddatabinding
+package com.example.androiddatabinding.source.remote.service
 
 import com.example.androiddatabinding.model.PostModel
 import retrofit2.Call

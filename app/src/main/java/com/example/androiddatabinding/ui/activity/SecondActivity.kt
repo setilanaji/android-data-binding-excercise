@@ -1,20 +1,15 @@
 package com.example.androiddatabinding.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.androiddatabinding.utils.NetUtilUser
-import com.example.androiddatabinding.UserResponse
 import com.example.androiddatabinding.ui.adapter.UserAdapter
 import com.example.androiddatabinding.databinding.ActivitySecondBinding
 import com.example.androiddatabinding.model.UserModel
 import com.example.androiddatabinding.viewmodel.UserViewModel
-import retrofit2.Call
-import retrofit2.Response
 
 class SecondActivity : AppCompatActivity() {
 
@@ -40,13 +35,25 @@ class SecondActivity : AppCompatActivity() {
         userViewModel.setAllUser()
 
         userViewModel.data.observe({ lifecycle }, {
-            val userAdapter = UserAdapter(this, it as MutableList<UserModel>)
+            val userAdapter = UserAdapter(this, it as MutableList<UserModel>,
+                object :   UserAdapter.PostItemListener {
+                    override fun onPostClick(userModel: UserModel) {
+                        val intent = Intent(this@SecondActivity, UserActivity::class.java)
+                        intent.putExtra("id", userModel.id)
+                        intent.putExtra("firstName", userModel.firstName)
+                        intent.putExtra("lastName", userModel.lastName)
+                        intent.putExtra("email", userModel.email)
+                        intent.putExtra("url", userModel.avatarImgUrl)
+                        startActivity(intent)
+                    }
+
+                })
             val recyclerView = binding.recyclerMainUser
 
             recyclerView.apply {
                 this.adapter = userAdapter
                 this.layoutManager =
-                        LinearLayoutManager(this@SecondActivity)
+                    LinearLayoutManager(this@SecondActivity)
             }
         })
 

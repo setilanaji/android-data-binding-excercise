@@ -2,7 +2,7 @@ package com.example.androiddatabinding.utils
 
 //import androidx.viewbinding.BuildConfig
 //import com.example.androiddatabinding.model.UserModel
-import com.example.androiddatabinding.UserService
+import com.example.androiddatabinding.source.remote.service.UserService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

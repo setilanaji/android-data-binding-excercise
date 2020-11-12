@@ -1,5 +1,6 @@
-package com.example.androiddatabinding
+package com.example.androiddatabinding.source.remote.service
 
+import com.example.androiddatabinding.source.remote.response.UserResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

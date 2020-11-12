@@ -53,7 +53,8 @@ class ThirdActivity : AppCompatActivity() {
         postViewModel.setAllPost()
 
         postViewModel.data.observe({ lifecycle }, {
-            val postAdapter = PostAdapter(this, it as MutableList<PostModel>, object :   PostAdapter.PostItemListener {
+            val postAdapter = PostAdapter(this, it as MutableList<PostModel>,
+                object :   PostAdapter.PostItemListener {
                 override fun onPostClick(postModel: PostModel) {
                     val intent = Intent(this@ThirdActivity, PostActivity::class.java)
                     intent.putExtra("id", postModel.id)

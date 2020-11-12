@@ -42,6 +42,7 @@ class PostAdapter (private val context: Context, private val items: List<PostMod
         init {
             title = view.findViewById(R.id.tv_item_post_title)
             body = view.findViewById(R.id.tv_item_post_body)
+            view.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
